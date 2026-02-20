@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:carely_caregiver/widgets/default_background_template.dart';
 import 'package:carely_caregiver/widgets/role_card.dart';
 import 'package:carely_caregiver/widgets/text/primary_text.dart';
@@ -14,6 +15,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultBackgroundTemplate(
+      appBarTitle: 'Welcome',
       child: GetBuilder<WelcomeScreenController>(
         init: WelcomeScreenController(),
         builder: (controller) {
@@ -54,7 +56,12 @@ class WelcomeScreen extends StatelessWidget {
                    title: 'I am a Caregiver',
                    description:
                    "I want to provide care, find shifts, and manage my schedule efficiently.",
-                 ),)
+                 ),),
+                  48.height,
+                  CommonButton(titleText: 'Next Step',onTap: (){
+                    Get.toNamed(AppRoutes.instance.basicInfoScreen);
+
+                  },buttonWidth: double.infinity,)
                 ],
               ),
             ),

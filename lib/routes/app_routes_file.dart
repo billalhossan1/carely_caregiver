@@ -1,4 +1,5 @@
 import 'package:carely_caregiver/screens/auth_all_screens/welcome_screen/welcome_screen.dart';
+import 'package:carely_caregiver/screens/profile_screens/basic_info_screen/basic_info_screen.dart';
 import 'package:get/get.dart';
 import 'package:carely_caregiver/screens/on_boarding_screen/on_boarding_screen.dart';
 import '../screens/about_us_screen/about_us_screen.dart';
@@ -31,6 +32,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(name: AppRoutes.instance.otpVerificationScreen, binding: AuthBinding(), page: () => const OtpVerificationScreen(), middlewares: [InternetCheckMiddleWare()]),
   GetPage(name: AppRoutes.instance.changePasswordScreen, binding: AuthBinding(), page: () => const ChangePasswordScreen(), middlewares: [InternetCheckMiddleWare()]),
   GetPage(name: AppRoutes.instance.welcomeScreen, binding: AuthBinding(), page: () => const WelcomeScreen(), middlewares: [InternetCheckMiddleWare()]),
+  GetPage(name: AppRoutes.instance.basicInfoScreen, binding: NavigationScreenBinding(), page: () => const BasicInfoScreen(), middlewares: [InternetCheckMiddleWare()]),
   ///////////////////////  auth all end
   /////////////////////  app base start
   GetPage(name: AppRoutes.instance.appNavigationScreen, binding: NavigationScreenBinding(), page: () => const AppNavigationScreen(), middlewares: [InternetCheckMiddleWare()]),

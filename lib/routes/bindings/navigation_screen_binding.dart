@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/screens/profile_screens/basic_info_screen/controller/basic_info_controller.dart';
 import 'package:get/get.dart';
 import '../../screens/about_us_screen/controller/about_us_screen_controller.dart';
 import '../../screens/app_navigation_screen/controller/app_navigation_screen_controller.dart';
@@ -11,5 +12,6 @@ class NavigationScreenBinding extends Bindings {
     Get.lazyPut(() => TermsAndConditionsScreenController());
     Get.lazyPut(() => PrivacyPolicyScreenController());
     Get.lazyPut(() => AboutUsScreenController());
+    Get.lazyPut(() => BasicInfoController());
   }
 }
