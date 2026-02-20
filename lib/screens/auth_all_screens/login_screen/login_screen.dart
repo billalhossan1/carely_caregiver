@@ -1,6 +1,6 @@
 import 'package:carely_caregiver/constant/app_colors.dart';
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:carely_caregiver/widgets/phone_number_text_filed.dart';
-import '../../../routes/app_routes.dart';
 import 'entity/auth_entity.dart';
 import 'package:carely_caregiver/widgets/default_background_template.dart';
 import 'package:carely_caregiver/widgets/text/primary_text.dart';
@@ -119,6 +119,13 @@ class LoginScreen extends StatelessWidget {
                         ):SizedBox(),),
                           32.height,
                           Obx(()=>CommonButton(
+                            onTap: (){
+                              if(controller.isSignInPage.value){
+                                // Perform login action
+                              }else{
+                                Get.toNamed(AppRoutes.instance.welcomeScreen);
+                              }
+                            },
                             titleText: controller.isSignInPage.value?'Login':'Continue',
                             buttonWidth: double.infinity,
                           ),),

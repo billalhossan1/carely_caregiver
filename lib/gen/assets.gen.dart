@@ -46,11 +46,17 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/caregiver.svg
+  String get caregiver => 'assets/icons/caregiver.svg';
+
+  /// File path: assets/icons/client.svg
+  String get client => 'assets/icons/client.svg';
+
   /// File path: assets/icons/google.svg
   String get google => 'assets/icons/google.svg';
 
   /// List of all assets
-  List<String> get values => [google];
+  List<String> get values => [caregiver, client, google];
 }
 
 class $AssetsImagesGen {

@@ -14,6 +14,7 @@ class AppRoutes {
   final String forgotScreen = "/forgot-screen";
   final String signUpScreen = "/signup-screen";
   final String changePasswordScreen = "/change-password-screen";
+  final String welcomeScreen = "/welcomeScreen";
   //////////////////////  app  navigation
   final String appNavigationScreen = "/app-navigation-screen";
   ////////////////////// base

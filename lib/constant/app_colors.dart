@@ -10,7 +10,7 @@ class AppColors {
   final Color screenBg = const Color(0xffF8F8F8);
   final Color whiteButton = const Color(0xffFBFBFB);
   final Color textGrey = const Color(0xff64748B);
-  final Color boxBg = const Color(0xffEBF4FF);
+  final Color boxBg = const Color(0xffE7E6F9);
   final Color boxBg2 = const Color(0xffBDD3EC);
   final Color splashBg = const Color(0xff0F172A);
   final Color primaryTextColor = const Color(0xff333333);

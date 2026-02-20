@@ -31,13 +31,14 @@ class AppSecondaryText extends StatelessWidget {
   final String text;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final TextAlign? textAlign;
   final Color? color;
   const AppSecondaryText({
     super.key,
     required this.text,
     this.fontSize,
     this.fontWeight,
-    this.color,
+    this.color, this.textAlign,
   });
 
   @override
@@ -45,6 +46,7 @@ class AppSecondaryText extends StatelessWidget {
     return CommonText(
       isDescription: true,
       text: text,
+      textAlign: textAlign??TextAlign.start,
       fontSize: fontSize ?? 18,
       fontWeight: fontWeight ?? FontWeight.w400,
       textColor:color?? AppColors.instance.secondaryText,
@@ -70,6 +72,29 @@ class AppContentHeader extends StatelessWidget {
     return CommonText(
       text: text,
       fontSize: fontSize ?? 18,
+      fontWeight: fontWeight ?? FontWeight.w700,
+      textColor:color?? AppColors.instance.textPrimary,
+    );
+  }
+}
+class AuthScreenHeader extends StatelessWidget {
+  final String text;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final Color? color;
+  const AuthScreenHeader({
+    super.key,
+    required this.text,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CommonText(
+      text: text,
+      fontSize: fontSize ?? 28,
       fontWeight: fontWeight ?? FontWeight.w700,
       textColor:color?? AppColors.instance.textPrimary,
     );
