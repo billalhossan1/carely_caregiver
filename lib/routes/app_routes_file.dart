@@ -1,5 +1,7 @@
 import 'package:carely_caregiver/screens/auth_all_screens/welcome_screen/welcome_screen.dart';
+import 'package:carely_caregiver/screens/client_screen/client_home_screen.dart';
 import 'package:carely_caregiver/screens/profile_screens/basic_info_screen/basic_info_screen.dart';
+import 'package:carely_caregiver/screens/profile_screens/profile_setup_screen/profile_setup_screen.dart';
 import 'package:get/get.dart';
 import 'package:carely_caregiver/screens/on_boarding_screen/on_boarding_screen.dart';
 import '../screens/about_us_screen/about_us_screen.dart';
@@ -21,23 +23,107 @@ import 'internet_check_middle_ware.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
   /////////////////  splash screen start
-  GetPage(name: AppRoutes.instance.initial, binding: SplashScreenBinding(), page: () => const SplashScreen()),
-  GetPage(name: AppRoutes.instance.errorScreen, binding: SplashScreenBinding(), page: () => const ErrorScreen()),
-  GetPage(name: AppRoutes.instance.notFoundScreen, binding: SplashScreenBinding(), page: () => const ErrorScreen()),
+  GetPage(
+    name: AppRoutes.instance.initial,
+    binding: SplashScreenBinding(),
+    page: () => const SplashScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.errorScreen,
+    binding: SplashScreenBinding(),
+    page: () => const ErrorScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.notFoundScreen,
+    binding: SplashScreenBinding(),
+    page: () => const ErrorScreen(),
+  ),
   ///////////////////////  auth all start
-  GetPage(name: AppRoutes.instance.loginScreen, binding: AuthBinding(), page: () => const LoginScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.onBoardingScreen, binding: AuthBinding(), page: () => const OnBoardingScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.forgotScreen, binding: AuthBinding(), page: () => const ForgotScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.signUpScreen, binding: AuthBinding(), page: () => const SignUpScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.otpVerificationScreen, binding: AuthBinding(), page: () => const OtpVerificationScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.changePasswordScreen, binding: AuthBinding(), page: () => const ChangePasswordScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.welcomeScreen, binding: AuthBinding(), page: () => const WelcomeScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.basicInfoScreen, binding: NavigationScreenBinding(), page: () => const BasicInfoScreen(), middlewares: [InternetCheckMiddleWare()]),
+  GetPage(
+    name: AppRoutes.instance.loginScreen,
+    binding: AuthBinding(),
+    page: () => const LoginScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.onBoardingScreen,
+    binding: AuthBinding(),
+    page: () => const OnBoardingScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.forgotScreen,
+    binding: AuthBinding(),
+    page: () => const ForgotScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.signUpScreen,
+    binding: AuthBinding(),
+    page: () => const SignUpScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.otpVerificationScreen,
+    binding: AuthBinding(),
+    page: () => const OtpVerificationScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.changePasswordScreen,
+    binding: AuthBinding(),
+    page: () => const ChangePasswordScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.welcomeScreen,
+    binding: AuthBinding(),
+    page: () => const WelcomeScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.basicInfoScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const BasicInfoScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.profileSetUpScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const ProfileSetupScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
   ///////////////////////  auth all end
   /////////////////////  app base start
-  GetPage(name: AppRoutes.instance.appNavigationScreen, binding: NavigationScreenBinding(), page: () => const AppNavigationScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.termsAndConditions, binding: NavigationScreenBinding(), page: () => const TermsAndConditionsScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.privacyPolicy, binding: NavigationScreenBinding(), page: () => const PrivacyPolicyScreen(), middlewares: [InternetCheckMiddleWare()]),
-  GetPage(name: AppRoutes.instance.aboutUs, binding: NavigationScreenBinding(), page: () => const AboutUsScreen(), middlewares: [InternetCheckMiddleWare()]),
+  GetPage(
+    name: AppRoutes.instance.appNavigationScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const AppNavigationScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.termsAndConditions,
+    binding: NavigationScreenBinding(),
+    page: () => const TermsAndConditionsScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.privacyPolicy,
+    binding: NavigationScreenBinding(),
+    page: () => const PrivacyPolicyScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.aboutUs,
+    binding: NavigationScreenBinding(),
+    page: () => const AboutUsScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+  GetPage(
+    name: AppRoutes.instance.clientHomeScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const ClientHomeScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
   /////////////////////  app base end
 ];

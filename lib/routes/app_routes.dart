@@ -16,8 +16,10 @@ class AppRoutes {
   final String changePasswordScreen = "/change-password-screen";
   final String welcomeScreen = "/welcomeScreen";
   final String basicInfoScreen = "/basicInfoScreen";
+  final String profileSetUpScreen = "/profileSetUpScreen";
   //////////////////////  app  navigation
   final String appNavigationScreen = "/app-navigation-screen";
+  final String clientHomeScreen = "/clientHomeScreen";
   ////////////////////// base
   final String termsAndConditions = "/terms-and-conditions";
   final String privacyPolicy = "/privacy-policy";

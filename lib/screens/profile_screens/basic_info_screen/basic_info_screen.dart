@@ -1,4 +1,5 @@
 import 'package:carely_caregiver/constant/app_colors.dart';
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:carely_caregiver/screens/auth_all_screens/login_screen/entity/auth_entity.dart';
 import 'package:carely_caregiver/widgets/default_background_template.dart';
 import 'package:carely_caregiver/widgets/phone_number_text_filed.dart';
@@ -146,7 +147,9 @@ class BasicInfoScreen extends StatelessWidget {
                                   Expanded(
                                     child: CommonButton(
                                       titleText: 'Continue',
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.toNamed(AppRoutes.instance.profileSetUpScreen);
+                                      },
                                       buttonWidth: double.infinity,
                                     ),
                                   ),
