@@ -14,37 +14,18 @@ import 'package:flutter/widgets.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/Satoshi-Black.otf
-  String get satoshiBlack => 'assets/fonts/Satoshi-Black.otf';
-
-  /// File path: assets/fonts/Satoshi-Bold.otf
-  String get satoshiBold => 'assets/fonts/Satoshi-Bold.otf';
-
-  /// File path: assets/fonts/Satoshi-Italic.otf
-  String get satoshiItalic => 'assets/fonts/Satoshi-Italic.otf';
-
-  /// File path: assets/fonts/Satoshi-Light.otf
-  String get satoshiLight => 'assets/fonts/Satoshi-Light.otf';
-
-  /// File path: assets/fonts/Satoshi-Medium.otf
-  String get satoshiMedium => 'assets/fonts/Satoshi-Medium.otf';
-
-  /// File path: assets/fonts/Satoshi-Regular.otf
-  String get satoshiRegular => 'assets/fonts/Satoshi-Regular.otf';
+  /// File path: assets/fonts/Satoshi-Variable.ttf
+  String get satoshiVariable => 'assets/fonts/Satoshi-Variable.ttf';
 
   /// List of all assets
-  List<String> get values => [
-    satoshiBlack,
-    satoshiBold,
-    satoshiItalic,
-    satoshiLight,
-    satoshiMedium,
-    satoshiRegular,
-  ];
+  List<String> get values => [satoshiVariable];
 }
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
+
+  /// File path: assets/icons/booking.svg
+  String get booking => 'assets/icons/booking.svg';
 
   /// File path: assets/icons/camera.svg
   String get camera => 'assets/icons/camera.svg';
@@ -55,11 +36,73 @@ class $AssetsIconsGen {
   /// File path: assets/icons/client.svg
   String get client => 'assets/icons/client.svg';
 
+  /// File path: assets/icons/earning.svg
+  String get earning => 'assets/icons/earning.svg';
+
   /// File path: assets/icons/google.svg
   String get google => 'assets/icons/google.svg';
 
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
+
+  /// File path: assets/icons/location.svg
+  String get location => 'assets/icons/location.svg';
+
+  /// File path: assets/icons/message.svg
+  String get message => 'assets/icons/message.svg';
+
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
+  /// File path: assets/icons/s_booking.svg
+  String get sBooking => 'assets/icons/s_booking.svg';
+
+  /// File path: assets/icons/s_earning.svg
+  String get sEarning => 'assets/icons/s_earning.svg';
+
+  /// File path: assets/icons/s_home.svg
+  String get sHome => 'assets/icons/s_home.svg';
+
+  /// File path: assets/icons/s_message.svg
+  String get sMessage => 'assets/icons/s_message.svg';
+
+  /// File path: assets/icons/s_profile.svg
+  String get sProfile => 'assets/icons/s_profile.svg';
+
+  /// File path: assets/icons/s_search.svg
+  String get sSearch => 'assets/icons/s_search.svg';
+
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
+
+  /// File path: assets/icons/star_icon.svg
+  String get starIcon => 'assets/icons/star_icon.svg';
+
+  /// File path: assets/icons/verify.svg
+  String get verify => 'assets/icons/verify.svg';
+
   /// List of all assets
-  List<String> get values => [camera, caregiver, client, google];
+  List<String> get values => [
+    booking,
+    camera,
+    caregiver,
+    client,
+    earning,
+    google,
+    home,
+    location,
+    message,
+    profile,
+    sBooking,
+    sEarning,
+    sHome,
+    sMessage,
+    sProfile,
+    sSearch,
+    search,
+    starIcon,
+    verify,
+  ];
 }
 
 class $AssetsImagesGen {

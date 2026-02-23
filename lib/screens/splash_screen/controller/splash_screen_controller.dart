@@ -19,7 +19,8 @@ class SplashScreenController extends GetxController {
       // bool value =await SharePrefsHelper.getBool(SharedPreferenceValue.isOnboarding)??false;
       Future.delayed(Duration(seconds: 3), () {
       //   if (value) {
-          Get.offAllNamed(AppRoutes.instance.onBoardingScreen);
+      //     Get.offAllNamed(AppRoutes.instance.onBoardingScreen);
+          Get.offAllNamed(AppRoutes.instance.appNavigationScreen,arguments: {"isClient":false});
         // } else {
         //   Get.offAllNamed(AppRoutes.instance.wellCome);
         // }

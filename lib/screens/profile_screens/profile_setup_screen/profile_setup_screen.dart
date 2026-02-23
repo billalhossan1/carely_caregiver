@@ -50,6 +50,7 @@ class ProfileSetupScreen extends StatelessWidget {
 
           // ── Fixed bottom buttons ──
           _buildBottomButtons(context),
+          20.height,
         ],
       ),
     );
@@ -119,7 +120,7 @@ class ProfileSetupScreen extends StatelessWidget {
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.transparent,
+                  color: AppColors.instance.primary.withAlpha(50),
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
                     color: AppColors.instance.primary,
@@ -197,35 +198,14 @@ class ProfileSetupScreen extends StatelessWidget {
     return Container(
       color: AppColors.instance.screenBg,
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
-      child: Row(
-        children: [
-          // Back
-          Expanded(
-            child: CommonButton(
-              titleText: 'Back',
-              buttonColor: AppColors.instance.boxBg,
-              titleColor: AppColors.instance.textPrimary,
-              buttonWidth: double.infinity,
-              buttonRadius: 50,
-              elevation: 0,
-              onTap: () => Navigator.pop(context),
-            ),
-          ),
-          const SizedBox(width: 16),
-          // Continue
-          Expanded(
-            child: CommonButton(
-              titleText: 'Continue',
-              buttonWidth: double.infinity,
-              buttonRadius: 50,
-              elevation: 0,
-              onTap: () {
-                Get.toNamed(AppRoutes.instance.clientHomeScreen);
-                // TODO: navigate to next profile setup step
-              },
-            ),
-          ),
-        ],
+      child: CommonButton(
+        titleText: 'Continue',
+        buttonWidth: double.infinity,
+        elevation: 0,
+        onTap: () {
+          Get.toNamed(AppRoutes.instance.clientHomeScreen);
+
+        },
       ),
     );
   }

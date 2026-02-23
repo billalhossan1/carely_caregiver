@@ -6,6 +6,7 @@ class AppColors {
   static AppColors get instance => _instance;
   ////////////////  app primary use color
   final Color primary = const Color(0xff6C63FF);
+  final Color secondaryColor = const Color(0xff4DB6FF);
   final Color secondaryText = const Color(0xff7F8C8D);
   final Color screenBg = const Color(0xffF8F8F8);
   final Color whiteButton = const Color(0xffFBFBFB);

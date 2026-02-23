@@ -66,11 +66,11 @@ class HomeHeaderWidget extends StatelessWidget {
         ),
 
         // Filter icon
-        _IconButton(icon: Icons.tune_rounded, onTap: onFilterTap),
+        AppIconButton(icon: Icons.tune_rounded, onTap: onFilterTap),
         const SizedBox(width: 8),
 
         // Notification icon
-        _IconButton(
+        AppIconButton(
           icon: Icons.notifications_outlined,
           onTap: onNotificationTap,
           hasBadge: true,
@@ -80,12 +80,12 @@ class HomeHeaderWidget extends StatelessWidget {
   }
 }
 
-class _IconButton extends StatelessWidget {
+class AppIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback? onTap;
   final bool hasBadge;
 
-  const _IconButton({required this.icon, this.onTap, this.hasBadge = false});
+  const AppIconButton({super.key, required this.icon, this.onTap, this.hasBadge = false});
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,7 @@ class _IconButton extends StatelessWidget {
             height: 40,
             decoration: BoxDecoration(
               color: AppColors.instance.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(30),
               border: Border.all(color: AppColors.instance.border),
             ),
             child: Icon(icon, size: 20, color: AppColors.instance.textPrimary),
@@ -139,8 +139,8 @@ class HomeSearchBar extends StatelessWidget {
       validationType: ValidationType.notRequired,
       controller: controller,
       hintText: 'Search by name, role, or city',
-      backgroundColor: AppColors.instance.white,
-      borderColor: AppColors.instance.border,
+      backgroundColor: AppColors.instance.textFiledBg,
+      borderColor: AppColors.instance.transparent,
       borderRadius: 12,
       paddingVertical: 13,
       prefixIcon: Icon(

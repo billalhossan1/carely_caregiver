@@ -157,7 +157,9 @@ class BasicInfoScreen extends StatelessWidget {
                               )
                             :       CommonButton(
             titleText: 'Next Step',
-            onTap: () {},
+            onTap: () {
+              controller.isClient.value==false?Get.toNamed(AppRoutes.instance.profileSetUpScreen):null;
+            },
             buttonWidth: double.infinity,
             ),
                       ],
