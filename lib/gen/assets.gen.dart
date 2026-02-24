@@ -14,11 +14,29 @@ import 'package:flutter/widgets.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
+  /// File path: assets/fonts/Satoshi-Black.ttf
+  String get satoshiBlack => 'assets/fonts/Satoshi-Black.ttf';
+
+  /// File path: assets/fonts/Satoshi-Light.ttf
+  String get satoshiLight => 'assets/fonts/Satoshi-Light.ttf';
+
+  /// File path: assets/fonts/Satoshi-Medium.ttf
+  String get satoshiMedium => 'assets/fonts/Satoshi-Medium.ttf';
+
+  /// File path: assets/fonts/Satoshi-Regular.ttf
+  String get satoshiRegular => 'assets/fonts/Satoshi-Regular.ttf';
+
   /// File path: assets/fonts/Satoshi-Variable.ttf
   String get satoshiVariable => 'assets/fonts/Satoshi-Variable.ttf';
 
   /// List of all assets
-  List<String> get values => [satoshiVariable];
+  List<String> get values => [
+    satoshiBlack,
+    satoshiLight,
+    satoshiMedium,
+    satoshiRegular,
+    satoshiVariable,
+  ];
 }
 
 class $AssetsIconsGen {
@@ -26,6 +44,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/booking.svg
   String get booking => 'assets/icons/booking.svg';
+
+  /// File path: assets/icons/calender.svg
+  String get calender => 'assets/icons/calender.svg';
 
   /// File path: assets/icons/camera.svg
   String get camera => 'assets/icons/camera.svg';
@@ -47,6 +68,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/location.svg
   String get location => 'assets/icons/location.svg';
+
+  /// File path: assets/icons/medicale.svg
+  String get medicale => 'assets/icons/medicale.svg';
 
   /// File path: assets/icons/message.svg
   String get message => 'assets/icons/message.svg';
@@ -84,6 +108,7 @@ class $AssetsIconsGen {
   /// List of all assets
   List<String> get values => [
     booking,
+    calender,
     camera,
     caregiver,
     client,
@@ -91,6 +116,7 @@ class $AssetsIconsGen {
     google,
     home,
     location,
+    medicale,
     message,
     profile,
     sBooking,
