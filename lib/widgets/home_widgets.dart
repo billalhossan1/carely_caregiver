@@ -3,6 +3,8 @@ import 'package:carely_caregiver/screens/client_screen/controller/client_home_co
 import 'package:core_kit/core_kit.dart';
 import 'package:flutter/material.dart';
 
+import '../gen/assets.gen.dart';
+
 // ═══════════════════════════════════════════════════════
 //  1. Home Header — Avatar + Name + Icons
 // ═══════════════════════════════════════════════════════
@@ -291,8 +293,8 @@ class HomeSectionHeader extends StatelessWidget {
       children: [
         CommonText(
           text: title,
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
           textColor: AppColors.instance.textPrimary,
           textAlign: TextAlign.start,
           isDescription: true,
@@ -371,8 +373,8 @@ class UpcomingBookingCard extends StatelessWidget {
                       children: [
                         CommonText(
                           text: '${booking.name}, ${booking.role}',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
                           textColor: AppColors.instance.textPrimary,
                           textAlign: TextAlign.start,
                           isDescription: true,
@@ -385,11 +387,7 @@ class UpcomingBookingCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                        Icon(
-                          Icons.calendar_today_outlined,
-                          size: 13,
-                          color: AppColors.instance.secondaryText,
-                        ),
+                        CommonImage(src: Assets.icons.sBooking,height: 20,width: 20,),
                         const SizedBox(width: 4),
                         CommonText(
                           text: booking.dateTime,
@@ -417,9 +415,7 @@ class UpcomingBookingCard extends StatelessWidget {
                 child: CommonButton(
                   titleText: 'View Details',
                   buttonWidth: double.infinity,
-                  buttonRadius: 50,
                   elevation: 0,
-                  buttonHeight: 42,
                   onTap: onViewDetails,
                 ),
               ),
@@ -433,11 +429,10 @@ class UpcomingBookingCard extends StatelessWidget {
                     color: AppColors.instance.boxBg,
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Icon(
-                    Icons.chat_bubble_outline_rounded,
-                    color: AppColors.instance.primary,
-                    size: 20,
-                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CommonImage(src: Assets.icons.sMessage,height: 20,width: 20,),
+                  )
                 ),
               ),
             ],
@@ -498,7 +493,7 @@ class ActivityItemWidget extends StatelessWidget {
               color: isMessage
                   ? const Color(0xFFFFF3E0)
                   : AppColors.instance.boxBg,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(18),
             ),
             child: Icon(
               isMessage
@@ -519,8 +514,8 @@ class ActivityItemWidget extends StatelessWidget {
               children: [
                 CommonText(
                   text: activity.title,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
                   textColor: AppColors.instance.textPrimary,
                   textAlign: TextAlign.start,
                   isDescription: true,
@@ -529,8 +524,8 @@ class ActivityItemWidget extends StatelessWidget {
                 const SizedBox(height: 2),
                 CommonText(
                   text: activity.description,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
                   textColor: AppColors.instance.secondaryText,
                   textAlign: TextAlign.start,
                   isDescription: true,
@@ -539,8 +534,8 @@ class ActivityItemWidget extends StatelessWidget {
                 const SizedBox(height: 4),
                 CommonText(
                   text: activity.timeAgo,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
                   textColor: AppColors.instance.textGrey,
                   textAlign: TextAlign.start,
                   isDescription: true,

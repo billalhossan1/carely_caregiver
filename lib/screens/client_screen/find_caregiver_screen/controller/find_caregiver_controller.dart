@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/widgets/bottom_shit_widget.dart';
 import 'package:get/get.dart';
 
 // ── Data Model ──────────────────────────────────────────
@@ -38,17 +39,25 @@ class FindCaregiverController extends GetxController {
   final RxString selectedFilter = 'All'.obs;
   void onFilterSelected(String filter) => selectedFilter.value = filter;
 
-  void onFilterTap() {
-    // TODO: open advanced filter bottom sheet
+  // ── Advanced filter state ──
+  final Rx<FilterState> filterState = FilterState().obs;
+
+  void onFilterTap() async {
+    final context = Get.context;
+    if (context == null) return;
+    final result = await showFilterBottomSheet(
+      context,
+      initial: filterState.value,
+    );
+    if (result != null) filterState.value = result;
   }
 
-  void onBookNow(CaregiverModel caregiver) {
-    // TODO: navigate to booking screen
-  }
 
   // ── Dummy data ──
   final List<CaregiverModel> _allCaregivers = const [
     CaregiverModel(
+      avatarUrl:
+          'https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg',
       name: 'Sarah Jenkins',
       role: 'RN',
       specialty: 'Companion & Daily Living',
@@ -58,6 +67,7 @@ class FindCaregiverController extends GetxController {
       hourlyRate: 25,
     ),
     CaregiverModel(
+      avatarUrl: 'https://market-resized.envatousercontent.com/photodune.net/EVA/TRX/2c/5e/35/e2/76/v1_E10/E109CG4V.jpg?auto=format&q=94&mark=https%3A%2F%2Fassets.market-storefront.envato-static.com%2Fwatermarks%2Fphoto-260724.png&opacity=0.2&cf_fit=contain&w=590&h=885&s=4b95f37d2220201e10c2b6791a9a3cf37f308f0315b4ba0ba8308067486aac91',
       name: 'Marcus Lee',
       role: 'Companion',
       specialty: 'Elderly Care',

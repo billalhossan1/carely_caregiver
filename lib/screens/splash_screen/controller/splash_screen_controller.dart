@@ -20,7 +20,7 @@ class SplashScreenController extends GetxController {
       Future.delayed(Duration(seconds: 3), () {
       //   if (value) {
       //     Get.offAllNamed(AppRoutes.instance.onBoardingScreen);
-          Get.offAllNamed(AppRoutes.instance.appNavigationScreen,arguments: {"isClient":false});
+          Get.offAllNamed(AppRoutes.instance.appNavigationScreen,arguments: {"isClient": true});
         // } else {
         //   Get.offAllNamed(AppRoutes.instance.wellCome);
         // }

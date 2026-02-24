@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 // ── Data Models ─────────────────────────
@@ -77,7 +78,7 @@ class ClientHomeController extends GetxController {
   ].obs;
 
   void onViewDetails() {
-    // TODO: navigate to booking details
+    Get.toNamed(AppRoutes.instance.careGiverDetailsScreen);
   }
 
   void onSeeAllBookings() {

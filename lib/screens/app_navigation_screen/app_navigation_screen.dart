@@ -49,7 +49,7 @@ class AppNavigationScreen extends StatelessWidget {
     // TODO: Add business screens here
     return [
       const ClientHomeScreen(),
-      const ClientHomeScreen(),
+      const FindCaregiverScreen(),
       const ClientHomeScreen(),
       const ClientHomeScreen(),
       const ClientHomeScreen(),
