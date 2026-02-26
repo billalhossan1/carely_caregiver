@@ -23,6 +23,7 @@ class AppRoutes {
   final String careGiverDetailsScreen = "/careGiverDetailsScreen";
   final String reviewBookingScreen = "/reviewBookingScreen";
   final String bookCareGiverScreen = "/bookCareGiverScreen";
+  final String messageScreen = "/messageScreen";
   ////////////////////// base
   final String termsAndConditions = "/terms-and-conditions";
   final String privacyPolicy = "/privacy-policy";

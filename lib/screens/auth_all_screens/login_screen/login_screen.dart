@@ -23,154 +23,166 @@ class LoginScreen extends StatelessWidget {
     return GetBuilder<LoginScreenController>(
       init: LoginScreenController(),
       builder: (controller) {
-        return DefaultBackgroundTemplate(
-          hideBackButton: true,
-          child: FormBuilder(
+        return Scaffold(
+          backgroundColor: AppColors.instance.screenBg,
+          body: FormBuilder(
             entity: AuthEntity(),
             builder: (context, formKey, entity) {
-              return Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Center(
-                  child: Column(
-                    crossAxisAlignment: .start,
-                    children: [
-                      Obx(
-                        () => Center(
-                          child: Column(
-                            children: [
-                              CommonImage(
-                                src: Assets.logo.appLogoPng.path,
-                                height: 70,
-                                width: 124,
-                              ),
-                              16.height,
-                              AppPrimaryText(
-                                text: controller.isSignInPage.value
-                                    ? "Welcome Back!"
-                                    : "Create Caregiver Account",
-                              ),
-                              8.height,
-                              AppSecondaryText(
-                                text: controller.isSignInPage.value
-                                    ? "Access your dashboard and care plans."
-                                    : "Join our community of healthcare professionals and start providing quality care.",
-                              ),
-                            ],
+              return SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Obx(
+                          () => Center(
+                            child: Column(
+                              children: [
+                                CommonImage(
+                                  src: Assets.logo.appLogoPng.path,
+                                  height: 70,
+                                  width: 124,
+                                ),
+                                16.height,
+                                AppPrimaryText(
+                                  text: controller.isSignInPage.value
+                                      ? "Welcome Back!"
+                                      : "Create Caregiver Account",
+                                ),
+                                8.height,
+                                AppSecondaryText(
+                                  text: controller.isSignInPage.value
+                                      ? "Access your dashboard and care plans."
+                                      : "Join our community of healthcare professionals and start providing quality care.",
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      38.height,
-                      Column(
-                        crossAxisAlignment: .start,
-                        children: [
-                          Obx(
-                            () => controller.isSignInPage.value
-                                ? SizedBox()
-                                : Column(
-                                    crossAxisAlignment: .start,
-                                    children: [
-                                      AppContentHeader(text: 'Full Name'),
-                                      12.height,
-                                      CommonTextField(
-                                        validationType:
-                                            ValidationType.validateEmail,
-                                        hintText: 'Enter your Full Name',
-                                      ),
-                                      16.height,
-                                    ],
-                                  ),
-                          ),
-
-                          AppContentHeader(text: 'Email'),
-                          12.height,
-                          CommonTextField(
-                            validationType: ValidationType.validateEmail,
-                            hintText: 'Enter your email',
-                          ),
-                          16.height,
-                          Obx(
-                            () => controller.isSignInPage.value
-                                ? SizedBox()
-                                : Column(
-                              crossAxisAlignment: .start,
-                                    children: [
-                                      AppContentHeader(text: 'Phone Number'),
-                                      12.height,
-                                      PhoneTextField(),
-                                      16.height,
-                                    ],
-                                  ),
-                          ),
-                          AppContentHeader(text: 'Password'),
-                          12.height,
-                          CommonTextField(
-                            validationType: ValidationType.validatePassword,
-                            hintText: 'Enter your Password',
-                          ),
-                          8.height,
-                        Obx(()=>  controller.isSignInPage.value?Align(
-                          alignment: Alignment.centerRight,
-                          child: CommonText(
-                            text: 'Forgot Password?',
-                            textColor: AppColors.instance.error,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                          ),
-                        ):SizedBox(),),
-                          32.height,
-                          Obx(()=>CommonButton(
-                            onTap: (){
-                              if(controller.isSignInPage.value){
-                                // Perform login action
-                              }else{
-                                Get.toNamed(AppRoutes.instance.welcomeScreen);
-                              }
-                            },
-                            titleText: controller.isSignInPage.value?'Login':'Continue',
-                            buttonWidth: double.infinity,
-                          ),),
-                          Obx(
-                            () => controller.isSignInPage.value
-                                ? _googleSignIn()
-                                : SizedBox(),
-                          ),
-                          48.height,
-                          Obx(
-                            () => Align(
-                              alignment: Alignment.center,
-                              child: RichText(
-                                text: TextSpan(
-                                  text: controller.isSignInPage.value
-                                      ? "Don't have an account?"
-                                      : "Already have an account?",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: AppColors.instance.textPrimary,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: controller.isSignInPage.value
-                                          ? ' Sign Up'
-                                          : ' Login',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: AppColors.instance.primary,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () {
-                                          controller.isSignInPage.value =
-                                              !controller.isSignInPage.value;
-                                        },
+                        38.height,
+                        Column(
+                          crossAxisAlignment: .start,
+                          children: [
+                            Obx(
+                              () => controller.isSignInPage.value
+                                  ? SizedBox()
+                                  : Column(
+                                      crossAxisAlignment: .start,
+                                      children: [
+                                        AppContentHeader(text: 'Full Name'),
+                                        12.height,
+                                        CommonTextField(
+                                          validationType:
+                                              ValidationType.validateEmail,
+                                          hintText: 'Enter your Full Name',
+                                        ),
+                                        16.height,
+                                      ],
                                     ),
-                                  ],
+                            ),
+
+                            AppContentHeader(text: 'Email'),
+                            12.height,
+                            CommonTextField(
+                              validationType: ValidationType.validateEmail,
+                              hintText: 'Enter your email',
+                            ),
+                            16.height,
+                            Obx(
+                              () => controller.isSignInPage.value
+                                  ? SizedBox()
+                                  : Column(
+                                      crossAxisAlignment: .start,
+                                      children: [
+                                        AppContentHeader(text: 'Phone Number'),
+                                        12.height,
+                                        PhoneTextField(),
+                                        16.height,
+                                      ],
+                                    ),
+                            ),
+                            AppContentHeader(text: 'Password'),
+                            12.height,
+                            CommonTextField(
+                              validationType: ValidationType.validatePassword,
+                              hintText: 'Enter your Password',
+                            ),
+                            8.height,
+                            Obx(
+                              () => controller.isSignInPage.value
+                                  ? Align(
+                                      alignment: Alignment.centerRight,
+                                      child: CommonText(
+                                        text: 'Forgot Password?',
+                                        textColor: AppColors.instance.error,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                      ),
+                                    )
+                                  : SizedBox(),
+                            ),
+                            32.height,
+                            Obx(
+                              () => CommonButton(
+                                onTap: () {
+                                  if (controller.isSignInPage.value) {
+                                    // Perform login action
+                                  } else {
+                                    Get.toNamed(
+                                      AppRoutes.instance.welcomeScreen,
+                                    );
+                                  }
+                                },
+                                titleText: controller.isSignInPage.value
+                                    ? 'Login'
+                                    : 'Continue',
+                                buttonWidth: double.infinity,
+                              ),
+                            ),
+                            Obx(
+                              () => controller.isSignInPage.value
+                                  ? _googleSignIn()
+                                  : SizedBox(),
+                            ),
+                            48.height,
+                            Obx(
+                              () => Align(
+                                alignment: Alignment.center,
+                                child: RichText(
+                                  text: TextSpan(
+                                    text: controller.isSignInPage.value
+                                        ? "Don't have an account?"
+                                        : "Already have an account?",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: AppColors.instance.textPrimary,
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: controller.isSignInPage.value
+                                            ? ' Sign Up'
+                                            : ' Login',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: AppColors.instance.primary,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () {
+                                            controller.isSignInPage.value =
+                                                !controller.isSignInPage.value;
+                                          },
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

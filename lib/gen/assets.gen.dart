@@ -75,6 +75,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/message.svg
   String get message => 'assets/icons/message.svg';
 
+  /// File path: assets/icons/message_send.svg
+  String get messageSend => 'assets/icons/message_send.svg';
+
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
 
@@ -118,6 +121,7 @@ class $AssetsIconsGen {
     location,
     medicale,
     message,
+    messageSend,
     profile,
     sBooking,
     sEarning,

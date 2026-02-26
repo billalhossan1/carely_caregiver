@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -72,7 +73,6 @@ class ProfileScreenController extends GetxController {
   }
 
   void logout() {
-    // TODO: implement logout
-    Get.snackbar('Logout', 'You have been logged out.');
+    Get.offAllNamed(AppRoutes.instance.loginScreen);
   }
 }

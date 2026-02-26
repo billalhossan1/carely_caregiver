@@ -198,7 +198,7 @@ class CareGiverDetailsScreen extends StatelessWidget {
 
   Widget _caregiverCard({required String title, required String value}) {
     return Container(
-      height: 86.h,
+      height: 100.h,
       width: 112.w,
       decoration: BoxDecoration(
         color: AppColors.instance.boxBg,
@@ -215,7 +215,7 @@ class CareGiverDetailsScreen extends StatelessWidget {
               fontSize: 16,
               textColor: AppColors.instance.secondaryText,
             ),
-            10.height,
+            6.height,
             CommonText(
               text: value,
               fontWeight: FontWeight.w700,

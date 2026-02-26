@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -112,6 +113,6 @@ class ChatListController extends GetxController {
   void onSearchChanged(value) => searchQuery.value = value;
 
   void onConversationTap(ChatConversation conversation) {
-    // TODO: navigate to chat detail screen
+   Get.toNamed(AppRoutes.instance.messageScreen);
   }
 }
