@@ -3,34 +3,43 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // Custom Snackbar Function
+import 'package:core_kit/core_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:core_kit/core_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 void showCustomSnackbar({
-   String? title,
   required String message,
-  Color? backgroundColor,
-  Color? titleColor,
-  Color? messageColor,
-  Widget? icon,
+  bool isError = true, // ✅ default true
+  String? title,
   Duration duration = const Duration(seconds: 3),
   SnackPosition position = SnackPosition.BOTTOM,
   bool isDismissible = true,
+  Widget? icon,
 }) {
-  Get.snackbar(
-    title??'', // Title of Snackbar
-    message, // Message of Snackbar
-    backgroundColor: backgroundColor ?? Colors.black,
-    titleText: CommonText(
-     text:  title??'',
+  final Color bgColor = isError ? Colors.red : Colors.green;
 
-        textColor: titleColor ?? Colors.white,
-        fontWeight: FontWeight.bold,
-        fontSize: 16,
-    ),
+  Get.snackbar(
+    title ?? (isError?'Error': 'Success'), // Fallback title based on isError
+    message,
+    backgroundColor: bgColor,
+    titleText: title != null
+        ? CommonText(
+      text: title,
+      textColor: Colors.white,
+      fontWeight: FontWeight.bold,
+      fontSize: 16,
+    )
+        : null,
     messageText: CommonText(
-     text:  message,
-        textColor: messageColor ?? Colors.white70,
-        fontSize: 14,
+      text: message,
+      textColor: Colors.white,
+      fontSize: 14,
     ),
-    icon: icon, // Optionally add an icon
+    icon: icon,
     snackPosition: position,
     duration: duration,
     isDismissible: isDismissible,

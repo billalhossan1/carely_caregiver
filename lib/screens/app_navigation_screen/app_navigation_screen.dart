@@ -1,4 +1,5 @@
 import 'package:carely_caregiver/screens/app_navigation_screen/widget/custom_nav_bar.dart';
+import 'package:carely_caregiver/screens/chat_list_screen/chat_list_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/care_giver_details_screen/care_giver_details_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/client_home_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/find_caregiver_screen/find_caregiver_screen.dart';
@@ -55,7 +56,7 @@ class AppNavigationScreen extends StatelessWidget {
       const ClientHomeScreen(),
       const FindCaregiverScreen(),
       const SelectServiceTypeScreen(),
-      const BookCaregiverScreen(),
+      const ChatListScreen(),
       // const ReviewBookingScreen(),
       const ProfileScreen(),
 

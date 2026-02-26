@@ -1,6 +1,8 @@
 import 'package:carely_caregiver/screens/auth_all_screens/welcome_screen/welcome_screen.dart';
+import 'package:carely_caregiver/screens/client_screen/book_caregiver_screen/book_caregiver_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/care_giver_details_screen/care_giver_details_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/client_home_screen.dart';
+import 'package:carely_caregiver/screens/client_screen/review_booking_screen/review_booking_screen.dart';
 import 'package:carely_caregiver/screens/profile_screens/basic_info_screen/basic_info_screen.dart';
 import 'package:carely_caregiver/screens/profile_screens/profile_setup_screen/profile_setup_screen.dart';
 import 'package:get/get.dart';
@@ -130,6 +132,20 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.careGiverDetailsScreen,
     binding: NavigationScreenBinding(),
     page: () => const CareGiverDetailsScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+
+  GetPage(
+    name: AppRoutes.instance.reviewBookingScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const ReviewBookingScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+
+  GetPage(
+    name: AppRoutes.instance.bookCareGiverScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const BookCaregiverScreen(),
     middlewares: [InternetCheckMiddleWare()],
   ),
   /////////////////////  app base end

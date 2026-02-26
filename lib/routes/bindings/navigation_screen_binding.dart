@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/screens/chat_list_screen/controller/chat_list_controller.dart';
 import 'package:carely_caregiver/screens/client_screen/book_caregiver_screen/controller/book_caregiver_controller.dart';
 import 'package:carely_caregiver/screens/client_screen/care_giver_details_screen/controller/care_giver_details_controller.dart';
 import 'package:carely_caregiver/screens/client_screen/controller/client_home_controller.dart';
@@ -27,5 +28,6 @@ class NavigationScreenBinding extends Bindings {
     Get.lazyPut(() => SelectedServiceTypeController());
     Get.lazyPut(() => BookCaregiverController());
     Get.lazyPut(() => ProfileScreenController());
+    Get.lazyPut(() => ChatListController());
   }
 }

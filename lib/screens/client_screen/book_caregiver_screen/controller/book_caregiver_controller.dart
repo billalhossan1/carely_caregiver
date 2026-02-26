@@ -1,3 +1,5 @@
+import 'package:carely_caregiver/routes/app_routes.dart';
+import 'package:carely_caregiver/widgets/show_custom_snackbar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -92,10 +94,9 @@ class BookCaregiverController extends GetxController {
 
   void confirmSchedule() {
     if (selectedDay.value == null || selectedSlot.value == null) {
-      Get.snackbar('Missing Info', 'Please select a date and time.');
+      showCustomSnackbar(message: 'Please select a date and time.', isError: true);
       return;
     }
-    // TODO: navigate to confirmation / payment screen
-    Get.snackbar('Confirmed', 'Schedule: $selectedScheduleText');
+    Get.toNamed(AppRoutes.instance.reviewBookingScreen);
   }
 }

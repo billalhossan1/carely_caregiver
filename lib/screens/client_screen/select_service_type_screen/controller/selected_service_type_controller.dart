@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 // ── Data Model ───────────────────────────────────────────
@@ -44,8 +45,8 @@ class SelectedServiceTypeController extends GetxController {
   }
 
   void onContinue() {
-    // TODO: navigate to next step with selectedIndex
-    final selected = serviceTypes[selectedIndex.value];
-    Get.snackbar('Selected', selected.title);
+    Get.toNamed(AppRoutes.instance.bookCareGiverScreen);
+    // final selected = serviceTypes[selectedIndex.value];
+
   }
 }

@@ -21,6 +21,8 @@ class AppRoutes {
   final String appNavigationScreen = "/app-navigation-screen";
   final String clientHomeScreen = "/clientHomeScreen";
   final String careGiverDetailsScreen = "/careGiverDetailsScreen";
+  final String reviewBookingScreen = "/reviewBookingScreen";
+  final String bookCareGiverScreen = "/bookCareGiverScreen";
   ////////////////////// base
   final String termsAndConditions = "/terms-and-conditions";
   final String privacyPolicy = "/privacy-policy";
