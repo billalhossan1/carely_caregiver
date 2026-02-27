@@ -18,7 +18,7 @@ class AppColors {
   final Color subTextColor = const Color(0xff757575);
   final Color textColor = const Color(0xff333333);
   final Color textPrimary = const Color(0xff2C3E50);
-  final Color success = const Color(0xff11D279);
+  final Color success = const Color(0xff2ECC71);
   final Color error = const Color(0xFFE74C3C);
   final Color accentColor = const Color(0xFFB5F1D5);
   final Color baseColor = const Color(0xFFF3F3F3);

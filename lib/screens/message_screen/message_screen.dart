@@ -20,6 +20,7 @@ class MessageScreen extends StatelessWidget {
       onBackPress: Get.back,
       // appBarTitle: 'test',
       titleWidget: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           ProfileAvatar(size: 48.h, imageUrl: 'https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg?semt=ais_user_personalization&w=740&q=80', borderColor: AppColors.instance.transparent,),
           2.width,

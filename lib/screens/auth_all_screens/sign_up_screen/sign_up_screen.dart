@@ -21,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
         init: SignUpController(),
         builder: (controller) {
           return Scaffold(
-            appBar: AppBar(title: CommonText(text: "Create New Account", fontSize: 18), centerTitle: true, surfaceTintColor: AppColors.instance.white50),
+            appBar: AppBar(title: CommonText(text: "Create New Account", fontSize: 18), centerTitle: true, surfaceTintColor: AppColors.instance.white50,),
             body: SafeArea(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: AppSize.width(value: 20.0)),

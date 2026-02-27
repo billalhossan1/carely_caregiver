@@ -12,6 +12,7 @@ import '../gen/assets.gen.dart';
 class HomeHeaderWidget extends StatelessWidget {
   final String userName;
   final String avatarUrl;
+  final bool showFilter;
   final VoidCallback? onFilterTap;
   final VoidCallback? onNotificationTap;
 
@@ -19,6 +20,7 @@ class HomeHeaderWidget extends StatelessWidget {
     super.key,
     required this.userName,
     this.avatarUrl = '',
+    this.showFilter = true,
     this.onFilterTap,
     this.onNotificationTap,
   });
@@ -68,7 +70,7 @@ class HomeHeaderWidget extends StatelessWidget {
         ),
 
         // Filter icon
-        AppIconButton(icon: Icons.tune_rounded, onTap: onFilterTap),
+       showFilter? AppIconButton(icon: Icons.tune_rounded, onTap: onFilterTap):SizedBox(),
         const SizedBox(width: 8),
 
         // Notification icon

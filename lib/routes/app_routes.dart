@@ -24,6 +24,7 @@ class AppRoutes {
   final String reviewBookingScreen = "/reviewBookingScreen";
   final String bookCareGiverScreen = "/bookCareGiverScreen";
   final String messageScreen = "/messageScreen";
+  final String bookingDetailsScreen = "/bookingDetailsScreen";
   ////////////////////// base
   final String termsAndConditions = "/terms-and-conditions";
   final String privacyPolicy = "/privacy-policy";

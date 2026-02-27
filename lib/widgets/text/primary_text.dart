@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 class AppPrimaryText extends StatelessWidget {
   final String text;
   final double? fontSize;
+  final bool isDescription;
   final FontWeight? fontWeight;
   final Color? color;
   const AppPrimaryText({
     super.key,
     required this.text,
+    this.isDescription = true,
     this.fontSize,
     this.fontWeight,
     this.color,
@@ -19,7 +21,7 @@ class AppPrimaryText extends StatelessWidget {
   Widget build(BuildContext context) {
     return CommonText(
       text: text,
-      isDescription: true,
+      isDescription: isDescription,
       fontSize: fontSize ?? 28,
       fontWeight: fontWeight ?? FontWeight.w700,
       textColor: color??AppColors.instance.textPrimary,
@@ -46,6 +48,7 @@ class AppSecondaryText extends StatelessWidget {
     return CommonText(
       isDescription: true,
       text: text,
+      maxLines: 4,
       textAlign: textAlign??TextAlign.start,
       fontSize: fontSize ?? 18,
       fontWeight: fontWeight ?? FontWeight.w400,

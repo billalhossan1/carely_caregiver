@@ -1,3 +1,4 @@
+import 'package:carely_caregiver/app_all_enum/app_login_status.dart';
 import 'package:carely_caregiver/constant/app_colors.dart';
 import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:carely_caregiver/widgets/phone_number_text_filed.dart';
@@ -46,12 +47,14 @@ class LoginScreen extends StatelessWidget {
                                 ),
                                 16.height,
                                 AppPrimaryText(
+                                  isDescription: false,
                                   text: controller.isSignInPage.value
                                       ? "Welcome Back!"
                                       : "Create Caregiver Account",
                                 ),
                                 8.height,
                                 AppSecondaryText(
+                                  textAlign: .center,
                                   text: controller.isSignInPage.value
                                       ? "Access your dashboard and care plans."
                                       : "Join our community of healthcare professionals and start providing quality care.",
@@ -127,7 +130,7 @@ class LoginScreen extends StatelessWidget {
                               () => CommonButton(
                                 onTap: () {
                                   if (controller.isSignInPage.value) {
-                                    // Perform login action
+                                    Get.toNamed(AppRoutes.instance.appNavigationScreen,arguments: {"isClient":true});
                                   } else {
                                     Get.toNamed(
                                       AppRoutes.instance.welcomeScreen,
@@ -140,11 +143,24 @@ class LoginScreen extends StatelessWidget {
                                 buttonWidth: double.infinity,
                               ),
                             ),
+                            32.height,
                             Obx(
-                              () => controller.isSignInPage.value
-                                  ? _googleSignIn()
-                                  : SizedBox(),
+                              () => controller.isSignInPage.value?CommonButton(
+                                onTap: () {
+
+                                  Get.toNamed(AppRoutes.instance.appNavigationScreen,arguments: {"isClient":false});
+                                },
+                                titleText: controller.isSignInPage.value
+                                    ? 'Login'
+                                    : 'Continue',
+                                buttonWidth: double.infinity,
+                              ):SizedBox(),
                             ),
+                            // Obx(
+                            //   () => controller.isSignInPage.value
+                            //       ? _googleSignIn()
+                            //       : SizedBox(),
+                            // ),
                             48.height,
                             Obx(
                               () => Align(
@@ -193,7 +209,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Column _googleSignIn() {
+  Widget _googleSignIn() {
     return Column(
       children: [
         32.height,

@@ -20,13 +20,13 @@ class DefaultBackgroundTemplate extends StatelessWidget {
       backgroundColor: bodyBackgroundColor??AppColors.instance.screenBg,
       appBar: CommonAppBar(
         titleWidget: titleWidget,
-        titleAlignment: Alignment.centerLeft,
         hideBack: hideBackButton,
         appbarConfig: AppbarConfig(
+        titleAlignment: Alignment.topLeft,
         backgroundColor: appBarBackgroundColor,
+          actions: actions??[],
         ),
         title: appBarTitle,
-        actions: actions,onBackPress: onBackPress,
       ),
       body: SafeArea(child: child),
     );

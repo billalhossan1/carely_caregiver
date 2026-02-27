@@ -1,4 +1,5 @@
 import 'package:carely_caregiver/screens/auth_all_screens/welcome_screen/welcome_screen.dart';
+import 'package:carely_caregiver/screens/care_giver_screens/booking_details_screen/booking_details_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/book_caregiver_screen/book_caregiver_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/care_giver_details_screen/care_giver_details_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/client_home_screen.dart';
@@ -154,6 +155,13 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.messageScreen,
     binding: NavigationScreenBinding(),
     page: () => const MessageScreen(),
+    middlewares: [InternetCheckMiddleWare()],
+  ),
+
+  GetPage(
+    name: AppRoutes.instance.bookingDetailsScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const BookingDetailsScreen(),
     middlewares: [InternetCheckMiddleWare()],
   ),
   /////////////////////  app base end

@@ -31,11 +31,15 @@ class MainEntryApp extends StatelessWidget {
       builder: (context, child) {
         return CoreKit.init(
           appbarConfig: AppbarConfig(
+            titleAlignment: .topLeft,
             onBack: (){
               Get.back();
             },
-            backIcon: Icon(Icons.arrow_back_ios)
+            backButton: Icon(Icons.arrow_back_ios)
+            // backIcon:
           ),
+
+
 
           designSize: const Size(393, 690),
           imageBaseUrl: AppApiEndPoint.instance.baseUrl,
