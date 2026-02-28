@@ -21,7 +21,9 @@ class DefaultBackgroundTemplate extends StatelessWidget {
       appBar: CommonAppBar(
         titleWidget: titleWidget,
         hideBack: hideBackButton,
+
         appbarConfig: AppbarConfig(
+          titleSpacing: -10,
         titleAlignment: Alignment.topLeft,
         backgroundColor: appBarBackgroundColor,
           actions: actions??[],
