@@ -54,11 +54,18 @@ class BookingRequestScreen extends StatelessWidget {
           itemCount: requests.length,
           appbar: header,
           padding: const EdgeInsets.only(bottom: 20),
-          onColapsAppbar: const SizedBox.shrink(),
+          onColapsAppbar: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: BookingTabSelector(
+              selected: c.selectedTab.value,
+              newCount: c.newRequests.length,
+              onTap: c.selectTab,
+            ),
+          ),
           itemBuilder: (_, index) {
             final req = requests[index];
             return BookingRequestCard(
-              onTap: (){
+              onTap: () {
                 Get.toNamed(AppRoutes.instance.bookingDetailsScreen);
               },
               request: req,

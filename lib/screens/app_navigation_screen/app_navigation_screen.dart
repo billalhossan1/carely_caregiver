@@ -1,5 +1,6 @@
 import 'package:carely_caregiver/screens/app_navigation_screen/widget/custom_nav_bar.dart';
 import 'package:carely_caregiver/screens/care_giver_screens/booking_request_screen/booking_request_screen.dart';
+import 'package:carely_caregiver/screens/care_giver_screens/earning_screen/earning_screen.dart';
 import 'package:carely_caregiver/screens/chat_list_screen/chat_list_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/care_giver_details_screen/care_giver_details_screen.dart';
 import 'package:carely_caregiver/screens/client_screen/client_home_screen.dart';
@@ -41,18 +42,16 @@ class AppNavigationScreen extends StatelessWidget {
   }
 
   List<Widget> _getCareGiverScreens() {
-    // TODO: Add user screens here
     return [
       const CareGiverHomeScreen(),
       const BookingRequestScreen(),
-      const CareGiverDetailsScreen(),
-      const ClientHomeScreen(),
+      const ChatListScreen(),
+      const EarningScreen(),
       const ProfileScreen(),
     ];
   }
 
   List<Widget> _getClientScreens() {
-    // TODO: Add business screens here
     return [
       const ClientHomeScreen(),
       const FindCaregiverScreen(),
@@ -73,7 +72,10 @@ class _AnimatedIndexedStack extends StatefulWidget {
   final int index;
   final List<Widget> children;
 
-  const _AnimatedIndexedStack({required this.index, required this.children});
+  const _AnimatedIndexedStack({
+    required this.index,
+    required this.children,
+  });
 
   @override
   State<_AnimatedIndexedStack> createState() => _AnimatedIndexedStackState();
@@ -90,23 +92,36 @@ class _AnimatedIndexedStackState extends State<_AnimatedIndexedStack>
   void initState() {
     super.initState();
     _current = widget.index;
+
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 280),
+      duration: const Duration(milliseconds: 350), // slightly slower = smoother
     );
-    _fade = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
+
+    _fade = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOutCubic,
+    );
+
     _slide = Tween<Offset>(
-      begin: const Offset(0, 0.04),
+      begin: const Offset(0, 0.08), // slightly more slide
       end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOutCubic,
+      ),
+    );
+
     _controller.forward();
   }
 
   @override
-  void didUpdateWidget(_AnimatedIndexedStack old) {
-    super.didUpdateWidget(old);
-    if (old.index != widget.index) {
-      setState(() => _current = widget.index);
+  void didUpdateWidget(_AnimatedIndexedStack oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.index != widget.index) {
+      _current = widget.index;
       _controller.forward(from: 0);
     }
   }
@@ -121,18 +136,21 @@ class _AnimatedIndexedStackState extends State<_AnimatedIndexedStack>
   Widget build(BuildContext context) {
     return Stack(
       fit: StackFit.expand,
-      children: widget.children.asMap().entries.map((e) {
-        final isActive = e.key == _current;
+      children: widget.children.asMap().entries.map((entry) {
+        final isActive = entry.key == _current;
+
         return Offstage(
           offstage: !isActive,
           child: TickerMode(
             enabled: isActive,
-            child: isActive
-                ? FadeTransition(
-                    opacity: _fade,
-                    child: SlideTransition(position: _slide, child: e.value),
-                  )
-                : e.value,
+            child: FadeTransition(
+              opacity: isActive ? _fade : const AlwaysStoppedAnimation(1),
+              child: SlideTransition(
+                position:
+                isActive ? _slide : const AlwaysStoppedAnimation(Offset.zero),
+                child: entry.value,
+              ),
+            ),
           ),
         );
       }).toList(),

@@ -1,9 +1,20 @@
+import 'package:carely_caregiver/app_all_enum/app_login_status.dart';
 import 'package:carely_caregiver/constant/app_colors.dart';
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:carely_caregiver/screens/profile_screens/profile_screen/controller/profile_screen_controller.dart';
 import 'package:carely_caregiver/widgets/default_background_template.dart';
 import 'package:core_kit/core_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+// ── Menu Item Model ──────────────────────────────────────
+class ProfileMenuItem {
+  final IconData icon;
+  final String title;
+  final VoidCallback? onTap;
+
+  const ProfileMenuItem({required this.icon, required this.title, this.onTap});
+}
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -13,6 +24,73 @@ class ProfileScreen extends StatelessWidget {
     final ProfileScreenController controller =
         Get.find<ProfileScreenController>();
     final colors = AppColors.instance;
+
+    // ── Account menu items ──
+    final List<ProfileMenuItem> accountItems = [
+      ProfileMenuItem(
+        icon: Icons.person_outline_rounded,
+        title: 'Personal Information',
+        onTap: () {
+          // TODO: navigate to personal info screen
+        },
+      ),
+      ProfileMenuItem(
+        icon: Icons.favorite_border_rounded,
+        title: 'Care Recipients',
+        onTap: () {
+          // TODO: navigate to care recipients screen
+        },
+      ),
+    ];
+
+    final List<ProfileMenuItem> caregiverAccountItems = [
+      ProfileMenuItem(
+        icon: Icons.person_outline_rounded,
+        title: 'Personal Information',
+        onTap: () {
+          // TODO: navigate to personal info screen
+        },
+      ),
+      ProfileMenuItem(
+        icon: Icons.favorite_border_rounded,
+        title: 'Availability & Schedule',
+        onTap: () {
+         Get.toNamed(AppRoutes.instance.availabilityScreen);
+        },
+      ),
+      ProfileMenuItem(
+        icon: Icons.favorite_border_rounded,
+        title: 'Documents & Verification',
+        onTap: () {
+          // TODO: navigate to care recipients screen
+        },
+      ),
+    ];
+
+    // ── Settings menu items ──
+    final List<ProfileMenuItem> settingsItems = [
+      ProfileMenuItem(
+        icon: Icons.notifications_none_rounded,
+        title: 'Notifications',
+        onTap: () {
+          // TODO: navigate to notifications settings
+        },
+      ),
+      ProfileMenuItem(
+        icon: Icons.lock_outline_rounded,
+        title: 'Privacy Policy',
+        onTap: () {
+          // TODO: open privacy policy
+        },
+      ),
+      ProfileMenuItem(
+        icon: Icons.description_outlined,
+        title: 'Terms of Service',
+        onTap: () {
+          // TODO: open terms of service
+        },
+      ),
+    ];
 
     return DefaultBackgroundTemplate(
       appBarTitle: 'Profile',
@@ -29,13 +107,13 @@ class ProfileScreen extends StatelessWidget {
             // ── Account group ──
             _SectionLabel(label: 'Account', colors: colors),
             8.height,
-            _MenuGroup(items: controller.accountItems, colors: colors),
+           selectedAppUserType == AppUserType.caregiver? _MenuGroup(items: accountItems, colors: colors):_MenuGroup(items: caregiverAccountItems, colors: colors),
             24.height,
 
             // ── Settings group ──
             _SectionLabel(label: 'Settings', colors: colors),
             8.height,
-            _MenuGroup(items: controller.settingsItems, colors: colors),
+            _MenuGroup(items: settingsItems, colors: colors),
             32.height,
 
             // ── Logout ──

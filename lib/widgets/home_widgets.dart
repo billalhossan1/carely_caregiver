@@ -1,7 +1,9 @@
 import 'package:carely_caregiver/constant/app_colors.dart';
+import 'package:carely_caregiver/routes/app_routes.dart';
 import 'package:carely_caregiver/screens/client_screen/controller/client_home_controller.dart';
 import 'package:core_kit/core_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../gen/assets.gen.dart';
 
@@ -76,7 +78,6 @@ class HomeHeaderWidget extends StatelessWidget {
         // Notification icon
         AppIconButton(
           icon: Icons.notifications_outlined,
-          onTap: onNotificationTap,
           hasBadge: true,
         ),
       ],
@@ -94,7 +95,9 @@ class AppIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap ?? (){
+        Get.toNamed(AppRoutes.instance.notificationScreen);
+      },
       child: Stack(
         clipBehavior: Clip.none,
         children: [

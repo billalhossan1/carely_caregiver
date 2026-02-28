@@ -1,4 +1,5 @@
 import 'package:carely_caregiver/routes/app_routes.dart';
+import 'package:carely_caregiver/widgets/app_calendar_controller.dart';
 import 'package:carely_caregiver/widgets/show_custom_snackbar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -10,8 +11,8 @@ class TimeSlot {
 }
 
 // ── Controller ───────────────────────────────────────────
-class BookCaregiverController extends GetxController {
-
+class BookCaregiverController extends GetxController
+    with AppCalendarController {
   RxBool rebuild = false.obs;
   // ── Calendar ──
   final Rx<DateTime> focusedMonth = DateTime.now().obs;
@@ -94,7 +95,10 @@ class BookCaregiverController extends GetxController {
 
   void confirmSchedule() {
     if (selectedDay.value == null || selectedSlot.value == null) {
-      showCustomSnackbar(message: 'Please select a date and time.', isError: true);
+      showCustomSnackbar(
+        message: 'Please select a date and time.',
+        isError: true,
+      );
       return;
     }
     Get.toNamed(AppRoutes.instance.reviewBookingScreen);

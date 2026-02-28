@@ -29,7 +29,8 @@ class TodayScheduleItem {
 class CareGiverHomeController extends GetxController {
   // User info
   final String userName = 'Sarah Jenkins';
-  final String userAvatarUrl = '';
+  final String userAvatarUrl =
+      'https://media.istockphoto.com/id/1468678624/photo/nurse-hospital-employee-and-portrait-of-black-man-in-a-healthcare-wellness-and-clinic-feeling.jpg?s=612x612&w=0&k=20&c=AGQPyeEitUPVm3ud_h5_yVX4NKY9mVyXbFf50ZIEtQI=';
   void onNotificationTap() {}
   void onSeeAllSchedule() {}
 
